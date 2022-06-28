@@ -73,3 +73,28 @@ console.log(people[0][1]); // 56
  
 people[1] = ["Bob", 29, false]; // მივანიჭოთ მასივი
 console.log(people[1][0]); // Bob
+////////////////////switch
+// var income = 300;
+// switch(income){ 
+//     case 100 :
+//         console.log("შემოსავალი 100-ის ტოლია");
+//         break;
+//     case 200 :
+//         console.log("შემოსავალი 200-ის ტოლია");
+//         break;
+//     case 300 :
+//         console.log("შემოსავალი 300-ის ტოლია");
+//         break;
+/////////////for
+var people = ["Tom", "Alice", "Bob", "Sam"];
+for(var index in people){    
+    document.write(people[index] + "</br>");
+}
+////////////////
+var people = ["Tom", "Alice", "Bob", "Sam"];
+var index = 0;
+while(index < people.length){    
+    document.write(people[index] + "</br>");
+    index++;
+}
+
