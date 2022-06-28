@@ -53,3 +53,23 @@ console.log(result); // true - num1 არაა რიცხვი
     
 result = isNaN(num2);
 console.log(result); //  false - num2 - რიცხვია
+/////////////////
+var people = [
+    ["Tom", 25, false],
+    ["Bill", 38, true],
+    ["Alice", 21, false]
+];
+ 
+console.log(people[0]); // ["Tom", 25, false]
+console.log(people[1]); // ["Bill", 38, true]
+///////////////
+var people = [
+    ["Tom", 25, false],
+    ["Bill", 38, true],
+    ["Alice", 21, false]
+];
+people[0][1] = 56; // მივანიჭოთ ცალკეული მნიშვნელობა
+console.log(people[0][1]); // 56
+ 
+people[1] = ["Bob", 29, false]; // მივანიჭოთ მასივი
+console.log(people[1][0]); // Bob
