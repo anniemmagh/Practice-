@@ -97,4 +97,30 @@ while(index < people.length){
     document.write(people[index] + "</br>");
     index++;
 }
+/////////////////////////////////
+function display(x, func) {
+    var message = func(x);
+    document.write(message);
+}
+function welcomeMessage(time) {
+    if (time < 12)
+        return "დილა მშვიდობისა!";
+    else
+        return "დღე მშვიდობისა!";
+}
+display(13, welcomeMessage);
+//////////////////////////
+function display(){
+    console.log("დილა მშვიდობისა");
+    display = function(){
+        console.log("დღე მშვიდობისა");
+    }
+}
+ 
+// ცვლადისთვის ფუნქციაზე მიმართვის მინიჭება ფუნქციის ხელახალ განსაზღვრამდე
+display(); // დილა მშვიდობისა
+display(); // დღე მშვიდობისა
+var displayMessage = display;
+displayMessage(); // დღე მშვიდობისა
+displayMessage(); // დღე მშვიდობისა
 
