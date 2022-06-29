@@ -377,3 +377,24 @@ bill.go();
 tom.displayInfo();
 bill.displayInfo();
 console.log(bill.maxage);
+//////////
+var days = ["კვირა","ორშაბათი","სამშაბათი","ოთხშაბათი","ხუთშაბათი","პარასკევი","შაბათი"];
+var months = ["იანვარი","თებერვალი","მარტი","აპრილი","მაისი","ივნისი",
+                "ივლისი","აგვისტო","სექტემბერი","ოქტომბერი","ნოემბერი","დეკემბერი"];
+            
+var myDate = new Date();
+var fullDate = "დღეს " + myDate.getFullYear() + " წლის " + myDate.getDate() + " " + months[myDate.getMonth()] + "ა" + ", " + days[myDate.getDay()];
+document.write(fullDate); // დღეს 2017 წლის 10 ნოემბერია, პარასკევი
+///////////
+var days = ["კვირა","ორშაბათი","სამშაბათი","ოთხშაბათი","ხუთშაბათი","პარასკევი","შაბათი"];
+var months = ["იანვარი","თებერვალი","მარტი","აპრილი","მაისი","ივნისი",
+                "ივლისი","აგვისტო","სექტემბერი","ოქტომბერი","ნოემბერი","დეკემბერი"];
+            
+var myDate = new Date();
+myDate.setDate(15);
+myDate.setMonth(6);
+myDate.setYear(2017);
+ 
+var fullDate = myDate.getDate() + " " + months[myDate.getMonth()] +
+                " " + myDate.getFullYear() + ", " + days[myDate.getDay()];
+document.write(fullDate); // 15 ივლისი 2017, შაბათი
