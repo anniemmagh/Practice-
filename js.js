@@ -238,3 +238,48 @@ var hasNameProp = "name" in user;
 console.log(hasNameProp); // true - თვისება name უკვე არსებობს user ობიექტში
 var hasWeightProp = "weight" in user;
 console.log(hasWeightProp); // false - user ობიექტში არაა თვისება ან მეთოდი weight
+////////////////
+var hasNameProp = user.hasOwnProperty('name');
+console.log(hasNameProp); // true
+var hasDisplayProp = user.hasOwnProperty('display');
+console.log(hasDisplayProp); // true
+var hasWeightProp = user.hasOwnProperty('weight');
+console.log(hasWeightProp); // false
+///////////////
+function createUser(pName, pAge) {
+    return {
+        name: pName,
+        age: pAge,
+        displayInfo: function() {
+            document.write("სახელი: " + this.name + " ასაკი: " + this.age + "<br/>");
+        }
+    };
+};
+var tom = createUser("Tom", 26);
+tom.displayInfo();
+var alice = createUser("Alice", 24);
+alice.displayInfo();
+///////////////
+function createUser(pName, pAge) {
+    return {
+        name: pName,
+        age: pAge,
+        displayInfo: function () {
+            document.write("სახელი: " + this.name + ", ასაკი: " + this.age + "<br/>");
+        },
+        driveCar: function (car) {
+            document.write(this.name + " ატარებს მანქანას მარკით " + car.name + "<br/>");
+        }
+    };
+};
+ 
+function createCar(mName, mYear) {
+    return {
+        name: mName,
+        year: mYear
+    };
+};
+var tom = createUser("ტომი", 26);
+tom.displayInfo();
+var bently = createCar("ბენტლი", 2004);
+tom.driveCar(bently);
