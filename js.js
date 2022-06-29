@@ -320,3 +320,22 @@ var john = new User("ჯონი", 28);
 john.hello();
 console.log(tom.maxAge); // 110
 console.log(john.maxAge); // 110
+/////////////////
+User.prototype.maxAge = 110;
+var tom = new User("ტომი", 26);
+var john = new User("ჯონი", 28);
+tom.maxAge = 99;
+console.log(tom.maxAge); // 99
+console.log(john.maxAge); // 110
+////////
+function User(pName, pAge) {
+    this.name = pName;
+    this.age = pAge;
+    this.displayInfo = function(){
+    document.write("სახელი: " + this.name + "; ასაკი: " + this.age);
+    };
+    };
+    var tom = new User("ტომი", 26);
+    tom.name=34;
+    console.log(tom.name);
+    
