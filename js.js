@@ -50,7 +50,7 @@ var num1 = "javascript";
 var num2 = "22";
 var result = isNaN(num1);
 console.log(result); // true - num1 არაა რიცხვი
-    
+
 result = isNaN(num2);
 console.log(result); //  false - num2 - რიცხვია
 /////////////////
@@ -59,7 +59,7 @@ var people = [
     ["Bill", 38, true],
     ["Alice", 21, false]
 ];
- 
+
 console.log(people[0]); // ["Tom", 25, false]
 console.log(people[1]); // ["Bill", 38, true]
 ///////////////
@@ -70,7 +70,7 @@ var people = [
 ];
 people[0][1] = 56; // მივანიჭოთ ცალკეული მნიშვნელობა
 console.log(people[0][1]); // 56
- 
+
 people[1] = ["Bob", 29, false]; // მივანიჭოთ მასივი
 console.log(people[1][0]); // Bob
 ////////////////////switch
@@ -87,13 +87,13 @@ console.log(people[1][0]); // Bob
 //         break;
 /////////////for
 var people = ["Tom", "Alice", "Bob", "Sam"];
-for(var index in people){    
+for (var index in people) {
     document.write(people[index] + "</br>");
 }
 ////////////////
 var people = ["Tom", "Alice", "Bob", "Sam"];
 var index = 0;
-while(index < people.length){    
+while (index < people.length) {
     document.write(people[index] + "</br>");
     index++;
 }
@@ -102,6 +102,7 @@ function display(x, func) {
     var message = func(x);
     document.write(message);
 }
+
 function welcomeMessage(time) {
     if (time < 12)
         return "დილა მშვიდობისა!";
@@ -110,13 +111,13 @@ function welcomeMessage(time) {
 }
 display(13, welcomeMessage);
 //////////////////////////
-function display(){
+function display() {
     console.log("დილა მშვიდობისა");
-    display = function(){
+    display = function () {
         console.log("დღე მშვიდობისა");
     }
 }
- 
+
 // ცვლადისთვის ფუნქციაზე მიმართვის მინიჭება ფუნქციის ხელახალ განსაზღვრამდე
 display(); // დილა მშვიდობისა
 display(); // დღე მშვიდობისა
@@ -125,7 +126,7 @@ displayMessage(); // დღე მშვიდობისა
 displayMessage(); // დღე მშვიდობისა
 
 ///////////////////////
-console.log(foo);   // undefined
+console.log(foo); // undefined
 var foo = "Tom";
 var c = a * b;
 var a = 7;
@@ -135,11 +136,11 @@ console.log(c); // NaN
 var user = {};
 user.name = "Tom";
 user.age = 26;
-user.display = function(){    
+user.display = function () {
     console.log(user.name);
     console.log(user.age);
 };
- 
+
 // მეთოდის გამოძახება
 user.display();
 ///////////////
@@ -184,7 +185,7 @@ user.display = function () {
     console.log(user.name);
     console.log(user.age);
 };
- 
+
 console.log(user.name); // Tom
 delete user.name; // წავშალოთ თვისება
 console.log(user.name); // undefined
@@ -210,18 +211,26 @@ var country = {
         name: "ბერნი",
         population: 126598
     },
-    cities: [
-        { name: "ციურიხი", population: 378884 },
-        { name: "ჟენევა", population: 188634 },
-        { name: "ბაზელი", population: 164937 }
+    cities: [{
+            name: "ციურიხი",
+            population: 378884
+        },
+        {
+            name: "ჟენევა",
+            population: 188634
+        },
+        {
+            name: "ბაზელი",
+            population: 164937
+        }
     ]
 };
- 
+
 // country.languages ყველა ელემენტის გამოტანა
 document.write("<h3>შვეიცარიის ოფიციალური ენებია</h3>");
 for (var i = 0; i < country.languages.length; i++)
     document.write(country.languages[i] + "<br/>");
- 
+
 // country.cities ყველა ელემენტის გამოტანა
 document.write("<h3>შვეიცარიის ქალაქებია</h3>");
 for (var i = 0; i < country.cities.length; i++)
@@ -250,7 +259,7 @@ function createUser(pName, pAge) {
     return {
         name: pName,
         age: pAge,
-        displayInfo: function() {
+        displayInfo: function () {
             document.write("სახელი: " + this.name + " ასაკი: " + this.age + "<br/>");
         }
     };
@@ -272,7 +281,7 @@ function createUser(pName, pAge) {
         }
     };
 };
- 
+
 function createCar(mName, mYear) {
     return {
         name: mName,
@@ -283,3 +292,31 @@ var tom = createUser("ტომი", 26);
 tom.displayInfo();
 var bently = createCar("ბენტლი", 2004);
 tom.driveCar(bently);
+////////////
+function User(pName, pAge) {
+    this.name = pName;
+    this.age = pAge;
+    this.displayInfo = function(){
+        document.write("სახელი: " + this.name + "; ასაკი: " + this.age + "<br/>");
+    };
+}
+/////////////
+function User(pName, pAge) {
+    this.name = pName;
+    this.age = pAge;
+    this.displayInfo = function(){
+        document.write("სახელი: " + this.name + "; ასაკი: " + this.age + "<br/>");
+    };
+};
+ 
+User.prototype.hello = function(){
+    document.write(this.name + " ამბობს: 'გამარჯობა!'<br/>");
+};
+User.prototype.maxAge = 110;
+ 
+var tom = new User("ტომი", 26);
+tom.hello();
+var john = new User("ჯონი", 28);
+john.hello();
+console.log(tom.maxAge); // 110
+console.log(john.maxAge); // 110
