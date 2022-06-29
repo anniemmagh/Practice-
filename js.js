@@ -176,3 +176,53 @@ var user = {
 };
 console.log(user["full name"]);
 user["display info"]();
+///////////////
+var user = {};
+user.name = "Tom";
+user.age = 26;
+user.display = function () {
+    console.log(user.name);
+    console.log(user.age);
+};
+ 
+console.log(user.name); // Tom
+delete user.name; // წავშალოთ თვისება
+console.log(user.name); // undefined
+///////////////////
+var country = {
+    name: "გერმანია",
+    language: "გერმანული",
+    capital: {
+        name: "ბერლინი",
+        population: 3375000,
+        year: 1237
+    }
+};
+console.log("დედაქალაქი: " + country.capital.name); // berlin
+console.log("მოსახლეობა: " + country["capital"]["population"]); // 3375000
+console.log("დაარსების წელი: " + country.capital["year"]); // 1237
+//////////////
+var country = {
+    name: "შვეიცარია",
+    languages: ["გერმანული", "ფრანგული", "იტალიური"],
+    capital: {
+        name: "ბერნი",
+        population: 126598
+    },
+    cities: [
+        { name: "ციურიხი", population: 378884 },
+        { name: "ჟენევა", population: 188634 },
+        { name: "ბაზელი", population: 164937 }
+    ]
+};
+ 
+// country.languages ყველა ელემენტის გამოტანა
+document.write("<h3>შვეიცარიის ოფიციალური ენებია</h3>");
+for (var i = 0; i < country.languages.length; i++)
+    document.write(country.languages[i] + "<br/>");
+ 
+// country.cities ყველა ელემენტის გამოტანა
+document.write("<h3>შვეიცარიის ქალაქებია</h3>");
+for (var i = 0; i < country.cities.length; i++)
+    document.write(country.cities[i].name + "<br/>");
+
