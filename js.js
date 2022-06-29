@@ -338,4 +338,41 @@ function User(pName, pAge) {
     var tom = new User("ტომი", 26);
     tom.name=34;
     console.log(tom.name);
-    
+    //////////
+    function User (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    var tom = new User("ტომი", 26);
+    function display(){
+        console.log("მისი სახელია " + this.name);
+    }
+    display.call(tom); // მისი სახელია ტომი
+////////////
+// მომხმარებლის კონსტრუქტორი
+function User (name, age) {
+    this.name = name;
+    this.age = age;
+    this.go = function(){document.write(this.name + " მიდის <br/>");}
+    this.displayInfo = function(){
+        document.write("სახელი: " + this.name + "; ასაკი: " + this.age + "<br/>");
+    };
+}
+User.prototype.maxage = 110;
+ 
+// მომუშავის კონსტრუქტორი
+function Employee(name, age, comp){
+    User.call(this, name, age);
+    this.company = comp;
+    this.displayInfo = function(){
+        document.write("სახელი: " + this.name + "; ასაკი: " + this.age + "; კომპანია: " + this.company + "<br/>");
+    };
+}
+Employee.prototype = Object.create(User.prototype);
+ 
+var tom = new User("ტომი", 26);
+var bill = new Employee("ბილი", 32, "Google");
+tom.go();
+bill.go();
+tom.displayInfo();
+bill.displayInfo();
