@@ -376,3 +376,4 @@ tom.go();
 bill.go();
 tom.displayInfo();
 bill.displayInfo();
+console.log(bill.maxage);
