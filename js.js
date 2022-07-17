@@ -441,3 +441,10 @@ display(); // დღე მშვიდობისა
 var displayMessage = display;
 displayMessage(); // დღე მშვიდობისა
 displayMessage(); // დღე მშვიდობისა
+//////////////
+console.log(foo);   // undefined
+var foo = "Tom";
+var c = a * b;
+var a = 7;
+var b = 3;
+console.log(c); // NaN
