@@ -417,3 +417,13 @@ function welcomeMessage(time) {
         return "დღე მშვიდობისა!";
 }
 display(13, welcomeMessage);
+////////////////
+function display(){
+    console.log("დილა მშვიდობისა");
+    display = function(){
+        console.log("დღე მშვიდობისა");
+    }
+}
+ 
+display(); // დილა მშვიდობისა
+display(); // დღე მშვიდობისა
