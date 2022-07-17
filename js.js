@@ -448,3 +448,14 @@ var c = a * b;
 var a = 7;
 var b = 3;
 console.log(c); // NaN
+/////////////
+var user = {};
+user.name = "Tom";
+user.age = 26;
+user.display = function(){    
+console.log(user.name);
+console.log(user.age);
+};
+
+// მეთოდის გამოძახება
+user.display();
