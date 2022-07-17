@@ -398,3 +398,10 @@ myDate.setYear(2017);
 var fullDate = myDate.getDate() + " " + months[myDate.getMonth()] +
                 " " + myDate.getFullYear() + ", " + days[myDate.getDay()];
 document.write(fullDate); // 15 ივლისი 2017, შაბათი
+////////////////
+var y = 5;
+var z = square(y);
+document.write(y + " კვადრატში უდრის " + z);
+function square(x) {
+    return x * x;
+}
