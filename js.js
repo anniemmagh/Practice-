@@ -427,3 +427,17 @@ function display(){
  
 display(); // დილა მშვიდობისა
 display(); // დღე მშვიდობისა
+////////////
+function display(){
+    console.log("დილა მშვიდობისა");
+    display = function(){
+        console.log("დღე მშვიდობისა");
+    }
+}
+ 
+// ცვლადისთვის ფუნქციაზე მიმართვის მინიჭება ფუნქციის ხელახალ განსაზღვრამდე
+display(); // დილა მშვიდობისა
+display(); // დღე მშვიდობისა
+var displayMessage = display;
+displayMessage(); // დღე მშვიდობისა
+displayMessage(); // დღე მშვიდობისა
