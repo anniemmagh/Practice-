@@ -405,3 +405,15 @@ document.write(y + " კვადრატში უდრის " + z);
 function square(x) {
     return x * x;
 }
+///////////////
+function display(x, func) {
+    var message = func(x);
+    document.write(message);
+}
+function welcomeMessage(time) {
+    if (time < 12)
+        return "დილა მშვიდობისა!";
+    else
+        return "დღე მშვიდობისა!";
+}
+display(13, welcomeMessage);
