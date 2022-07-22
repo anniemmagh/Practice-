@@ -479,4 +479,15 @@ function User(pName, pAge) {
     john.hello();
     console.log(tom.maxAge); // 110
     console.log(john.maxAge); // 110
-    
+    ////////////4
+    function User(pName, pAge) {
+        this.name = pName;
+        this.age = pAge;
+        this.displayInfo = function(){
+        document.write("სახელი: " + this.name + "; ასაკი: " + this.age);
+        };
+        };
+        var tom = new User("ტომი", 26);
+        tom.name=34;
+        console.log(tom.name);
+        
