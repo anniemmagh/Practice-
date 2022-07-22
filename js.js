@@ -490,4 +490,11 @@ function User(pName, pAge) {
         var tom = new User("ტომი", 26);
         tom.name=34;
         console.log(tom.name);
-        
+///////////
+function add(x, y){   
+    return x + y;
+ }
+ var result = add.call(this, 3, 8);
+  
+ console.log(result); // 11
+ 
