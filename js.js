@@ -497,4 +497,15 @@ function add(x, y){
  var result = add.call(this, 3, 8);
   
  console.log(result); // 11
+ //////////////
+ function User (name, age) {
+    this.name = name;
+    this.age = age;
+    }
+    var tom = new User("ტომი", 26);
+    function display(){
+    console.log("მისი სახელია " + this.name);
+    }
+    display.call(tom); // მისი სახელია ტომი
+    
  
